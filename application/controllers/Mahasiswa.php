@@ -25,7 +25,8 @@ class Mahasiswa extends CI_Controller{
                 'jurusan' => $this->input->post('jurusan')
             ];
 
-            $this->db
+            $this->db->insert('mahasiswa',$data);
+            redirect('mahasiswa/index');
         }
     }
 }
