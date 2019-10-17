@@ -13,8 +13,9 @@
   <body>
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col mb-3">
                 <h3>Daftar Mahasiswa</h3>
+                <a href="<?= base_url('mahasiswa/tambah'); ?>" class="btn btn-primary mb-2">Tambah Data</a>
                 <table class="table">
                     <thead>
                         <tr>
