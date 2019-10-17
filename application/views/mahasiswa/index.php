@@ -27,17 +27,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>
-                                <a href="" class="badge badge-primary">Ubah</a>
-                                <a href="" class="badge badge-danger">Hapus</a>
-                            </td>
-                        </tr>
+                        <?php 
+                        $i = 1;
+                        foreach ($mahasiswa as $mhs) : ?>
+                            <tr>
+                                <th scope="row"><?= $i++;?></th>
+                                <td><?= $mhs['nama']?></td>
+                                <td><?= $mhs['nrp']?></td>
+                                <td><?= $mhs['email']?></td>
+                                <td><?= $mhs['jurusan']?></td>
+                                <td>
+                                    <a href="" class="badge badge-primary">Ubah</a>
+                                    <a href="" class="badge badge-danger">Hapus</a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
