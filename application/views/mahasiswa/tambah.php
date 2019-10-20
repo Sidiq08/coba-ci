@@ -12,14 +12,32 @@
   </head>
   <body>
     <div class="container">
-        <div class="row">
-            <div class="col-6 mb-3">
+        <div class="row mt-3">
+            <div class="col-md-6">
+            <div class="card">
+            <div class="card-header">
                 <h3>Form Tambah Data Mahasiswa</h3>
+            </div>
+                <div class="card-body">
+
                    <form method="post" action="<?= base_url('mahasiswa/tambah');?>">
                         <div class="form-group">
+                        <?php if (validation_errors()) : ?>
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control is-invalid" id="nama" name = "nama">
+                            <div class="invalid-feedback">
+                                <?php validation_errors(); ?>
+                            </div>
+                        <?php elseif (empty(form_error('nama'))) : ?>
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control is-invalid" id="nama" name = "nama">
+                            <div class="valid-feedback">
+                                Look's Great !
+                            </div>  
+                        <?php else :?>
                             <label for="nama">Nama</label>
                             <input type="text" class="form-control" id="nama" name = "nama">
-                            <?= form_error('nama'); ?>
+                        <?php endif;?>
                         </div>
                         <div class="form-group">
                             <label for="nrp">NRP</label>
@@ -42,12 +60,15 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Tambah Data</button>
+                            <button type="submit" class="btn btn-primary" >Tambah Data</button>
                         </div>
                      </form>
+                </div>
+            </div>
             </div>
         </div>
     </div>
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
