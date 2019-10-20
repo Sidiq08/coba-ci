@@ -10,7 +10,7 @@ class Mahasiswa extends CI_Controller{
 
     public function index(){
         
-        $data['judul'] = 'Halaman Mahasiswa';
+        $data['judul'] = 'Daftar Mahasiswa';
         $data['mahasiswa'] = $this->Mahasiswa_model->getAllMahasiswa();
         if ($this->input->post('keyword')) {
             $data['mahasiswa'] = $this->Mahasiswa_model->cariDataMahasiswa();
@@ -18,7 +18,6 @@ class Mahasiswa extends CI_Controller{
         $this->load->view('template/header', $data);
         $this->load->view('mahasiswa/index', $data);
         $this->load->view('template/footer');
-        
     }
     
     public function tambah(){
