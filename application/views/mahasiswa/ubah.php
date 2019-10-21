@@ -10,7 +10,7 @@
     
         <div class="card-body">
            <form method="post" action="">
-               <input type="hidden" id="id" value="<?= $mahasiswa['id'];?>">
+               <input type="hidden" name="id" id="id" value="<?= $mahasiswa['id'];?>">
                 <div class="form-group">
                     <label for="nama">Nama</label>
                     <input type="text" name="nama" value="<?= $mahasiswa['nama'];?>" id="nama" class="form-control">

@@ -8,7 +8,7 @@
                 <h3>Form Tambah Data Mahasiswa</h3>
             </div>
             
-                <div class="card-body">
+                <div class="card-body">                
                    <form method="post" action="">
                         <div class="form-group">
                             <label for="nama">Nama</label>
@@ -21,14 +21,14 @@
                             <label for="nrp">NRP</label>
                             <input type="number" class="form-control" id="nrp" name = "nrp">
                             <small class="form-text text-danger">
-                                <?= form_error('nama');?>
+                                <?= form_error('nrp');?>
                             </small>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name = "email" placeholder="email@example.com">
+                            <input type="text" class="form-control" id="email" name = "email" placeholder="email@example.com">
                             <small class="form-text text-danger">
-                                <?= form_error('nama');?>
+                                <?= form_error('email');?>
                             </small>
                         </div>
                         <div class="form-group">
