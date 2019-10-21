@@ -5,13 +5,13 @@ class Peoples extends CI_Controller{
         $data['judul'] = 'List of Peoples';
         $this->load->model('Peoples_model', 'peoples');
 
-        $this->library('pagination');
+        $this->load->library('pagination');
 
         if ($this->input->post('submit')) {
-            $data['keyword'] = $this->input->post['keyword'];
-            $this->session->set_userdate('keyword', $data['keyword']);
+            $data['keyword'] = $this->input->post('keyword');
+            $this->session->set_userdata('keyword', $data['keyword']);
         }else{
-            $data['keyword'] = $this->session->userdate('keyword');
+            $data['keyword'] = $this->session->userdata('keyword');
         }
 
         $this->db->like('name', $data['keyword']);
@@ -19,11 +19,11 @@ class Peoples extends CI_Controller{
         $this->db->from('peoples');
         $config['total_rows'] = $this->db->count_all_results();
         $data['total_rows'] = $config['total_rows'];
-        $config['per_page'];
+        $config['per_page'] = 8;
 
         $this->pagination->initialize($config);
 
-        $data['start'] = $this->url->segment(3);
+        $data['start'] = $this->uri->segment(3);
         $data['peoples'] = $this->peoples->getPeoples($config['per_page'], $data['start'], $data['keyword']);
 
         $this->load->view('template/header', $data);

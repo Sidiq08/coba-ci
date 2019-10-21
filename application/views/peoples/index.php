@@ -2,7 +2,7 @@
     <h3 class="mt-3"> List Of Peoples</h3>
     <div class="row">
         <div class="col-md-5">
-            <form action="<?= base_url();?>" method="post">
+            <form action="<?= base_url('peoples');?>" method="post">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Search Keyword . . ." name="keyword" autocomplete="off" autofocus>
                     <div class="input-group-append">
@@ -43,7 +43,7 @@
                         <td>
                             <a href="" class="badge badge-warning">detail</a>
                             <a href="" class="badge badge-success">edit</a>
-                            <a href="" class="badge badge-dangegr">delete</a>
+                            <a href="" class="badge badge-danger">delete</a>
                         </td>
                     </tr>
                     <?php endforeach;?>
