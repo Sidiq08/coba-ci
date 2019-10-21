@@ -1,7 +1,7 @@
 const flashData = $('.flash-data').data('flashdata');
 
 if (flashData){
-    Swal({
+    Swal.fire({
         title : 'Data Mahasiswa',
         text : 'Berhasil ' + flashData,
         type : 'success'
