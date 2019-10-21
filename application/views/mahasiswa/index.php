@@ -1,5 +1,5 @@
 <div class="container">
-<div class="flash-data" data-flash="<?= $this->session->flashdata('flash');?>"></div>
+<div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash');?>"></div>
 <?php if($this->session->flashdata('flash') ) :?>
 <!-- <div class="row mt-3">
     <div class="col-md-6">

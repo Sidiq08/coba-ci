@@ -44,7 +44,7 @@
                             </select>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" name="tambah" class="btn btn-primary" >Tambah Data</button>
+                            <button type="submit" name="tambah" class="btn btn-primary " >Tambah Data</button>
                         </div>
                      </form>
                 </div>
